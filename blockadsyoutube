@@ -1,0 +1,10 @@
+#!name= Chặn QC Youtube 
+#!desc=Chặn QC Youtube by Lập Phạm
+
+[Script]
+#  YoutubeAds, Liên hệ FB: Lập Phạm。
+youtube-player = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube-player.js
+youtube-fake = type=http-response,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad,requires-body=0,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube-fake.js
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com
